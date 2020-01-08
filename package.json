@@ -1,0 +1,18 @@
+{
+  "name": "tiny-wonder-demo-triangle",
+  "version": "0.0.1",
+  "authors": "yyc",
+  "license": "mit",
+  "scripts": {
+    "watch": "bsb -clean-world -make-world -w",
+    "bsb:build": "bsb -clean-world -make-world",
+    "build:dev": "NODE_ENV=development  webpack --config webpack.config.js",
+    "webpack:prod": "NODE_ENV=production  webpack --config webpack.config.js"
+  },
+  "devDependencies": {
+    "bs-platform": "^5.2.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
+}
