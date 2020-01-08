@@ -1,4 +1,4 @@
-let error = msg => Js.Exn.raiseError(msg) |> ignore;
+let error = msg => Js.Exn.raiseError(msg);
 
 let errorAndReturn = msg => Js.Exn.raiseError(msg);
 
