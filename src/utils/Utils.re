@@ -1,4 +1,4 @@
-let error = msg => Js.Exn.raiseError(msg);
+let error = msg => Js.Exn.raiseError(msg) |> Obj.magic;
 
 let errorAndReturn = msg => Js.Exn.raiseError(msg);
 

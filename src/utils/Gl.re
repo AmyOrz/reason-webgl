@@ -161,7 +161,16 @@ external uniform1i: (uniformLocation, int) => unit = "";
 external uniform3f: (uniformLocation, float, float, float) => unit = "";
 
 [@bs.send.pipe: webgl1Context]
+external vertexAttrib1f: (attributeLocation, float) => unit = "";
+
+[@bs.send.pipe: webgl1Context]
+external vertexAttrib2f: (attributeLocation, float, float) => unit = "";
+
+[@bs.send.pipe: webgl1Context]
 external vertexAttrib3f: (attributeLocation, float, float, float) => unit = "";
+
+[@bs.send.pipe: webgl1Context]
+external vertexAttrib4fv: (attributeLocation, Float32_array.t) => unit = "";
 
 [@bs.send.pipe: webgl1Context]
 external drawElements: (int, int, int, int) => unit = "";

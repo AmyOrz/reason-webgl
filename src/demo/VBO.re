@@ -2,10 +2,8 @@ open Js.Typed_array;
 
 let vs = {|
     attribute vec4 aPosition;
-    attribute float aSize;
     void main(){
         gl_Position = aPosition;
-        gl_PointSize = aSize;
     }
     |};
 
@@ -22,21 +20,24 @@ let start = () => {
 
   let aPosition =
     gl |> OperateGLUtils.unsafeGetAttribLoation(program, "aPosition");
-  let aSize = gl |> OperateGLUtils.unsafeGetAttribLoation(program, "aSize");
 
   let uColor =
     gl |> OperateGLUtils.unsafeGetUnformLocation(program, "uColor");
 
-  gl |> Gl.vertexAttrib3f(aPosition, 0.3, 0.5, 0.);
-  gl |> Gl.vertexAttrib1f(aSize, 20.);
-  gl |> Gl.uniform3f(uColor, 0., 1., 1.);
-  gl |> Gl.drawArrays(Gl.getPoints(gl), 0, 1);
+  let vertcies = Float32Array.make([|0., 0.5, (-0.5), (-0.5), 0.5, (-0.5)|]);
 
+  gl |> Gl.uniform3f(uColor, 0., 1., 1.);
+
+  let buffer = gl |> Gl.createBuffer;
+  gl |> Gl.bindBuffer(Gl.getArrayBuffer(gl), buffer);
   gl
-  |> Gl.vertexAttrib4fv(
-       aPosition,
-       Float32Array.make([|(-0.5), 0.5, 0., 1.|]),
+  |> Gl.bufferFloat32Data(
+       Gl.getArrayBuffer(gl),
+       vertcies,
+       Gl.getStaticDraw(gl),
      );
-  gl |> Gl.uniform3f(uColor, 1., 1., 0.);
-  gl |> Gl.drawArrays(Gl.getPoints(gl), 0, 1);
+  gl |> Gl.vertexAttribPointer(aPosition, 2, Gl.getFloat(gl), false, 0, 0);
+  gl |> Gl.enableVertexAttribArray(aPosition);
+
+  gl |> Gl.drawArrays(Gl.getTriangles(gl), 0, 3);
 };

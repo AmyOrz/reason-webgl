@@ -1,1 +1,2 @@
-HelloPoint.start();
+/* HelloPoint.start(); */
+VBO.start();
