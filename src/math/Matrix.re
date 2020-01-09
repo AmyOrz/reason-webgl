@@ -117,3 +117,52 @@ let setTranslation = ((x, y, z), resultFloat32Arr) => {
 
   resultFloat32Arr;
 };
+
+let translate = ((x, y, z), resultFloat32Arr) => {
+  open Float32Array;
+
+  unsafe_get(resultFloat32Arr, 0)
+  *. x
+  +. unsafe_get(resultFloat32Arr, 4)
+  *. y
+  +. unsafe_get(resultFloat32Arr, 8)
+  *. z
+  +. unsafe_get(resultFloat32Arr, 12)
+  |> unsafe_set(resultFloat32Arr, 12);
+
+  unsafe_get(resultFloat32Arr, 1)
+  *. x
+  +. unsafe_get(resultFloat32Arr, 5)
+  *. y
+  +. unsafe_get(resultFloat32Arr, 9)
+  *. z
+  +. unsafe_get(resultFloat32Arr, 13)
+  |> unsafe_set(resultFloat32Arr, 13);
+
+  unsafe_get(resultFloat32Arr, 2)
+  *. x
+  +. unsafe_get(resultFloat32Arr, 6)
+  *. y
+  +. unsafe_get(resultFloat32Arr, 10)
+  *. z
+  +. unsafe_get(resultFloat32Arr, 14)
+  |> unsafe_set(resultFloat32Arr, 14);
+
+  unsafe_get(resultFloat32Arr, 3)
+  *. x
+  +. unsafe_get(resultFloat32Arr, 7)
+  *. y
+  +. unsafe_get(resultFloat32Arr, 11)
+  *. z
+  +. unsafe_get(resultFloat32Arr, 15)
+  |> unsafe_set(resultFloat32Arr, 15);
+
+  resultFloat32Arr |> PrintUtils.printPipeline;
+};
+/* Matrix4.prototype.rotate = function(angle, x, y, z) {
+     return this.concat(new Matrix4().setRotate(angle, x, y, z));
+   }; */
+
+let concat = (multiplyFloat32Arr, resultFloat32Arr) => {
+  
+};

@@ -1,7 +1,7 @@
 ####{BSB GENERATED: NO EDIT
 B lib/bs
 FLG -open TinyWonderDemoTriangle
-FLG -ppx '/Users/yons/Desktop/mickey/reason-webgl/node_modules/_bs-platform@5.2.1@bs-platform/lib/bsppx.exe -bs-jsx 3'
+FLG -ppx '/Users/yons/Desktop/mickey/reason-webgl/node_modules/bs-platform/lib/bsppx.exe -bs-jsx 3'
 S /Users/yons/Desktop/mickey/reason-webgl/node_modules/bs-platform/lib/ocaml
 B /Users/yons/Desktop/mickey/reason-webgl/node_modules/bs-platform/lib/ocaml
 FLG -nostdlib
