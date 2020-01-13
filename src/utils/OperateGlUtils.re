@@ -33,5 +33,12 @@ let unsafeGetUnformLocation = (program, attr, gl) => {
   let target = gl |> Gl.getUniformLocation(program, attr);
 
   Js.Null.test(target) ?
-    Utils.error({|get attribute ${attr} error|}) : target |> Js.Null.getExn;
+    Utils.error({|get uniform ${attr} error|}) : target |> Js.Null.getExn;
+};
+
+let unsafeCreateBuffer = gl => {
+  let target = gl |> Gl.unsafeCreateBuffer;
+
+  Js.Null.test(target) ?
+    Utils.error({|create buffer error|}) : target |> Js.Null.getExn;
 };

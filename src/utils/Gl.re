@@ -87,6 +87,9 @@ external bindAttribLocation: (program, int, string) => unit = "";
 
 [@bs.send.pipe: webgl1Context] external createBuffer: buffer = "";
 
+[@bs.send.pipe: webgl1Context]
+external unsafeCreateBuffer: Js.Null.t(buffer) = "createBuffer";
+
 [@bs.get]
 external getArrayBuffer: webgl1Context => bufferTarget = "ARRAY_BUFFER";
 

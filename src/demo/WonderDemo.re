@@ -1,4 +1,4 @@
-let main = () => {
+/* let main = () => {
   let canvas = DomExtend.querySelector(DomExtend.document, "#webgl");
 
   let gl =
@@ -146,4 +146,4 @@ let main = () => {
   _loop();
 };
 
-main();
+main(); */
