@@ -1,6 +1,4 @@
+ .*
 mine/
-
 node_modules/
-
 lib/
- .bsb.lock

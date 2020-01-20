@@ -1,3 +1,3 @@
-/* HelloPoint.start(); */
+HelloPoint.start();
 /* VBO.start(); */
-Transform.start();
+/* Transform.start(); */
